@@ -1,0 +1,20 @@
+<mat-toolbar class="title mat-elevation-z8">
+    <span *ngIf="title == 'login'">
+        <a>
+            <img src="assets/img/logo.jpg" alt="logo" class="logo">
+        </a>
+    </span>
+    <span class="title-group">
+        <a>
+            <i class="material-icons">
+                dashboard
+            </i>
+            Broto Legal Alimentos S.A.
+        </a>
+    </span>
+    <div>
+        <button mat-raised-button class="button" *ngIf="title !== 'login'" (click)="Logout()" color="primary">
+            Sair
+        </button>
+    </div>
+</mat-toolbar>

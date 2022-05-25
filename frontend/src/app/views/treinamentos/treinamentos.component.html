@@ -1,0 +1,14 @@
+<div class="div-ext">
+  <mat-card class="card" *ngFor="let departamento of departamentos">
+    <mat-card-title>
+      <i class="material-icons" >
+        folder
+      </i>
+      {{departamento.nome}}
+    </mat-card-title>
+    <mat-card-actions>
+      <button class="button" mat-button (click)="onSelect(departamento.id)">Acessar Curso</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

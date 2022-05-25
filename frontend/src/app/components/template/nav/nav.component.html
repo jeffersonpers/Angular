@@ -1,0 +1,30 @@
+<mat-sidenav-container class="container" *ngIf="title !== 'login'">
+  <mat-sidenav class="sidenav mat-elevation-z8" mode="side" opened fixedInViewport="true">
+    <span *ngIf="title !== 'login'">
+      <a>
+          <img src="assets/img/logo.jpg" alt="logo" class="logo">
+      </a>
+    </span>
+    <mat-nav-list>
+      <mat-tree [dataSource]="dataSource" class="sidenav nav" [treeControl]="treeControl" >
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding >
+          <a href="/{{node.link}}" mat-list-item>
+            <i class="material-icons" >
+              {{ node.icon }}
+            </i>
+            {{node.name}}
+          </a>
+        </mat-tree-node>
+          <!-- This is the tree node template for expandable nodes -->
+        <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+          <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
+            <mat-icon class="mat-icon-rtl-mirror">
+              {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+            </mat-icon>
+          </button>
+          {{node.name}}
+        </mat-tree-node>
+      </mat-tree>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>

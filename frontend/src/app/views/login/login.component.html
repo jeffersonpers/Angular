@@ -1,0 +1,30 @@
+<mat-card class="login-box">
+    <mat-card-title class="loginlogo">
+        <a>
+            Login
+        </a>
+    </mat-card-title>
+    <mat-card-subtitle class="logoimg">
+        <a>
+            <i>
+                <img src="assets/img/broto-legal-logotipo.png.webp" alt="logo" class="logo">
+            </i>
+        </a>
+    </mat-card-subtitle>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Login" (click)="hideimgl = false" (blur)="hideimgl = !hideimgl">
+            <mat-icon matSuffix class="material-icons">{{hideimgl ? '' : 'man'}}</mat-icon>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Senha" [type]="hide ? 'password' : 'text'" (click)="hideimgs = false" (blur)="hideimgs = !hideimgs">
+            <mat-icon matSuffix class="material-icons lock">{{hideimgs ? '' : 'lock'}}</mat-icon>
+            <button mat-icon-button matSuffix (click)="hide = !hide ; hideimgs = false">
+                <mat-icon matSuffix class="material-icons iconspass">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="Login()" color="primary">
+        Entrar
+    </button>
+</mat-card>
